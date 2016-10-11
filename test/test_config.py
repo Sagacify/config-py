@@ -33,6 +33,21 @@ class TestConfig(unittest.TestCase):
         assert(merged['nested']['only_in_2'])
         assert(merged['nested']['conflicting'])
 
+    def test_bad_config_merge(self):
+        one = {
+            'nested': 'string'
+        }
+        two = {
+            'nested': {
+                'only_in_2': True,
+                'conflicting': True
+            }
+        }
+        from sconfig import merge_configs
+        merged = merge_configs(one, two)
+        assert(merged['nested']['only_in_2'])
+        assert(merged['nested']['conflicting'])
+
     def test_load_config(self):
         from lib import load_config
         example_config = load_config('example_config')

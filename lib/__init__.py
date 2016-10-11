@@ -17,9 +17,8 @@ def merge_configs(a, b):
             new_config[key] = merge_configs(a[key], b[key])
         else:
             log.warn(
-                'Overriding keys with different types %s and %s' %
-                (type(a[key]), type(b[key])))
-            # TODO: ADD WARNING
+                'Overriding keys with different types %s and %s',
+                type(a[key]), type(b[key]))
             new_config[key] = b[key]
     return new_config
 
@@ -33,12 +32,11 @@ def load_config(name):
     try:
         path = os.path.join(os.getcwd(), 'config', name.lower() + '.py')
         spec = spec_from_file_location(name, path)
-        config = module_from_spec(spec)
-        spec.loader.exec_module(config)
-        log.info(config.config)
-        return config.config
+        this_config = module_from_spec(spec)
+        spec.loader.exec_module(this_config)
+        return this_config.config
     except FileNotFoundError:
-        log.warn('Not found %s config' % name)
+        log.warn('Not found %s config', name)
         return dict()
 
 
