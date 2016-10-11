@@ -1,0 +1,25 @@
+# Define the settings of the machine used for the build
+machine:
+  java:
+    version: openjdk8
+  python:
+    version: 3.5.2
+  environment:
+    COMPOSE_PROJECT_NAME: myproject
+  services:
+    - docker
+
+# Launch the build of the docker image
+dependencies:
+  override:
+    - wget https://raw.githubusercontent.com/Sagacify/ci-tools/master/run-sonar.sh
+    - chmod +x run-sonar.sh
+    - ./run-sonar.sh check
+    - ./run-sonar.sh install
+    - pip install tox pylint flake8 flake8-quotes
+
+test:
+  override:
+    - flake8 *
+    - tox
+    - ./run-sonar.sh run
