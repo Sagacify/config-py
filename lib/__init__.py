@@ -1,6 +1,4 @@
-"""Automatically load a configuration according to the RUN_ENV paramter"""
-
-
+"""Automatically load a configuration according to the RUN_ENV parameter"""
 import os
 import logging
 from importlib.util import spec_from_file_location, module_from_spec
