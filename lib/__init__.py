@@ -1,4 +1,4 @@
-"""Automatically load a configuration according to the RUN_ENV parameter"""
+"""Automatically load a configuration according to the RUN_ENV parameter."""
 import os
 import logging
 from importlib.util import spec_from_file_location, module_from_spec
@@ -7,7 +7,7 @@ log = logging.getLogger(__name__)
 
 
 def merge_configs(a, b):
-    """Recursively merge config dictionnaries."""
+    """Recursively merge config dictionaries."""
     new_config = dict()
     for key in a.keys() ^ b.keys():
         new_config[key] = a.get(key) or b[key]
@@ -26,7 +26,7 @@ def merge_configs(a, b):
 def load_config(name):
     """Load config with given name.
 
-    Looks in the confing folder of the current working directory for
+    Looks in the config folder of the current working directory for
     a file named %{name}.py.
     """
     try:
