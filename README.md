@@ -1,7 +1,10 @@
 saga-config
 ===========
 
-This module is a python equivalent to the node.js config module found [here](https://www.npmjs.com/package/config).
+This module replicates some features from the node.js [config module](https://www.npmjs.com/package/config).
+
+Currently supports *.py config files in a config folder in the current working directory.
+Other features will be added as they become necessary.
 
 ## testing
 ```docker-compose up``` will automatically test the project and watch for changes.
