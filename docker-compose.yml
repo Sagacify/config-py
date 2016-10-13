@@ -1,0 +1,10 @@
+py:
+  build: .
+  command: tox -e watch
+  volumes:
+    - ./config:/var/www/config
+    - ./coverage:/var/www/coverage
+    - ./lib:/var/www/lib
+    - ./test:/var/www/test
+    - ./setup.py:/var/www/setup.py
+    - ./tox.ini:/var/www/tox.ini
