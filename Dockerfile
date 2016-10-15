@@ -2,6 +2,7 @@ FROM python:3.5-alpine
 
 WORKDIR /var/www
 
-RUN pip install tox pytest flake8 flake8-quotes
+COPY ./dev-requirements.txt /var/www/requirements-dev.txt
+RUN pip install -r dev-requirements-dev.txt
 
-COPY ./lib /var/www/lib
+COPY ./src /var/www/src

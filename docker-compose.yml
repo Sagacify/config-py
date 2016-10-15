@@ -1,10 +1,10 @@
 py:
   build: .
-  command: tox -e watch
+  command: pytest-watch -- --cov=src --cov-report html:coverage/html
   volumes:
     - ./config:/var/www/config
     - ./coverage:/var/www/coverage
-    - ./lib:/var/www/lib
+    - ./src:/var/www/src
     - ./test:/var/www/test
     - ./setup.py:/var/www/setup.py
     - ./tox.ini:/var/www/tox.ini

@@ -4,15 +4,11 @@ machine:
     version: openjdk8
   python:
     version: 3.5.2
-  environment:
-    COMPOSE_PROJECT_NAME: myproject
-  services:
-    - docker
 
 # Launch the build of the docker image
 dependencies:
   override:
-    - pip install tox pylint flake8 flake8-quotes
+    - pip install --upgrade -r requirements-dev.txt
     - wget https://raw.githubusercontent.com/Sagacify/ci-tools/master/run-sonar.sh
     - chmod +x run-sonar.sh
     - ./run-sonar.sh check
@@ -20,5 +16,6 @@ dependencies:
 
 test:
   override:
-    - tox
+    - flake8
+    - pytest --cov=src --cov-report xml:coverage/cov.xml
     - ./run-sonar.sh run
