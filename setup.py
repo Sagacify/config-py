@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name='saga-config',
-    packages=['sconfig'],
-    package_dir={'sconfig': 'lib'},
+    name='sagaconfig',
+    packages=['sagaconfig'],
+    package_dir={'sagaconfig': 'lib'},
     version='0.0.1',
     description='A config helper',
     author='Sagacify',
