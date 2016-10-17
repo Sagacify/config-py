@@ -13,7 +13,7 @@ setup(
     name='sagaconfig',
     packages=['sagaconfig'],
     package_dir={'sagaconfig': 'src'},
-    version='0.0.1',
+    version='0.0.2',
     description='A config helper',
     long_description=long_description,
     author='Sagacify',
