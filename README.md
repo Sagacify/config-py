@@ -7,7 +7,7 @@ Currently supports *.py config files in a config folder in the current working d
 Other features will be added as they become necessary.
 
 ## testing
-```docker-compose up``` will automatically test the project and watch for changes.
+`docker-compose up` will automatically test the project and watch for changes.
 
 To generate html coverage reports run:
 `docker-compose run py tox -e html`
