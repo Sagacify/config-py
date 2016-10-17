@@ -10,7 +10,7 @@ except(IOError, ImportError, OSError):
 setup(
     name='sagaconfig',
     packages=['sagaconfig'],
-    package_dir={'sconfig': 'src'},
+    package_dir={'sagaconfig': 'src'},
     version='0.0.1',
     description='A config helper',
     long_description=long_description,
