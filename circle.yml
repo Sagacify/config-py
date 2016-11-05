@@ -8,6 +8,7 @@ machine:
 # Launch the build of the docker image
 dependencies:
   override:
+    - pip install pylint
     - pip install --upgrade -r requirements-dev.txt
     - wget https://raw.githubusercontent.com/Sagacify/ci-tools/master/run-sonar.sh
     - chmod +x run-sonar.sh
