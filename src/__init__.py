@@ -16,10 +16,15 @@ def merge_configs(a, b):
         if isinstance(a[key], dict) and isinstance(b[key], dict):
             new_config[key] = merge_configs(a[key], b[key])
         else:
-            log.warn(
-                'Overriding keys with different types %s and %s',
-                type(a[key]), type(b[key]))
             new_config[key] = b[key]
+            if a[key] is None:
+                pass
+            elif type(a) == type(b):
+                log.debug('Overriding default %s', a[key])
+            else:
+                log.warn(
+                    'Overriding keys with different types %s and %s',
+                    type(a[key]), type(b[key]))
     return new_config
 
 
