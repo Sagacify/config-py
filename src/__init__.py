@@ -18,7 +18,7 @@ def merge_configs(a, b):
         else:
             new_config[key] = b[key]
             if a[key] is None:
-                pass
+                continue
             elif type(a) == type(b):
                 log.debug('Overriding default %s', a[key])
             else:
