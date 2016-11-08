@@ -10,7 +10,7 @@ __title__ = 'sagaconfig'
 __summary__ = 'A config helper.'
 __uri__ = 'https://github.com/Sagacify/config-py'
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 
 __author__ = 'Sagacify'
