@@ -2,6 +2,14 @@
 import os
 import logging
 from importlib.util import spec_from_file_location, module_from_spec
+from .__about__ import (
+    __author__, __copyright__, __email__, __license__, __summary__,
+    __title__, __uri__, __version__
+)
+
+__all__ = [
+    '__author__', '__copyright__', '__email__', '__license__', '__summary__',
+    '__title__', '__uri__', '__version__', 'config']
 
 log = logging.getLogger(__name__)
 
